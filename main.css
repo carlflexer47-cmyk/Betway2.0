@@ -1,0 +1,261 @@
+/* --- Global & Body Styles --- */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    /* This creates the dark gray area around the login box in the middle of the screen */
+    background-color: #333; /* Dark gray background */
+    display: flex;
+    flex-direction: column;
+}
+
+/* --- Header Section (Top Bar) --- */
+.header {
+    background-color: #000; /* Pure black header */
+    color: white;
+    padding: 10px 15px; /* Adjust padding for mobile tap targets */
+    display: flex;
+    justify-content: space-between; /* Links on the left/center, buttons on the right */
+    align-items: center;
+    border-bottom: 2px solid #555; /* Add a subtle divider below the header */
+}
+
+.brand {
+    font-weight: bold;
+    font-size: 20px; /* Adjust font size slightly */
+    display: flex;
+    align-items: center;
+}
+
+.brand-name {
+    /* Using the exact dark green from the 'Login' text in the form, not a bright green */
+    color: white; /* Make the brand text white to match the screen */
+}
+
+/* Adjust the positioning of buttons/text in your HTML. Your HTML has a single .brand and .header-buttons. We'll style them. */
+.brand {
+    margin-right: auto; /* Push buttons to the far right */
+}
+
+.menu-icon {
+    font-size: 24px;
+    margin-right: 15px;
+    cursor: pointer;
+}
+
+.header-buttons {
+    display: flex;
+    gap: 8px; /* Space between buttons */
+}
+
+.header-buttons button {
+    border: none;
+    border-radius: 4px;
+    padding: 8px 12px;
+    font-weight: bold;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+/* Style for individual header buttons based on the image */
+.login-header-btn {
+    background-color: transparent;
+    color: #a9a9a9; /* Grayish text */
+    border: 1px solid white; /* White outline */
+    padding: 7px 11px; /* Adjust for border */
+}
+
+.signup-header-btn {
+    background-color: #008000; /* Dark Green */
+    color: white;
+}
+
+.betslip-header-btn {
+    background-color: #1a1a1a; /* Very dark gray, almost black */
+    color: white;
+}
+
+.betslip-count {
+    /* Adjust based on the yellow bubble in the screen */
+    background-color: #ffff00; /* Bright yellow */
+    color: black;
+    padding: 2px 6px;
+    border-radius: 50%;
+    margin-left: 5px;
+    font-size: 11px;
+}
+
+
+/* --- Login Modal (The White Box) --- */
+/* Your HTML uses .overlay and .login-box. We will hide the overlay to only show the centered box. We could style the .overlay to center it, but let's just use the flexbox on the body as designed. */
+
+/* Styling for centering and appearance of the login box */
+.login-box {
+    background-color: white;
+    width: 90%;
+    max-width: 360px; /* Keeps it contained on larger screens */
+    margin: auto; /* Uses flexbox on the body to center horizontally and vertically */
+    padding: 15px 25px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 15px rgba(0,0,0,0.3); /* Stronger shadow on the dark background */
+    box-sizing: border-box; /* Crucial for internal padding on mobile */
+    position: relative; /* For the close button positioning */
+}
+
+.login-box h2 {
+    text-align: center;
+    color: #008000; /* Dark green matching text/buttons */
+    font-size: 22px;
+    margin-bottom: 25px;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    color: #999;
+    cursor: pointer;
+}
+
+
+/* --- Login Form Inputs --- */
+/* Style for inputs in the white box */
+.mobile-number {
+    display: flex;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.country-code {
+    background-color: #008000; /* Dark green for the +27 bubble */
+    color: white;
+    padding: 10px 15px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    border-right: 1px solid #ddd;
+}
+
+.mobile-number input[type="text"] {
+    flex: 1; /* Input takes up remaining space */
+    border: none;
+    margin: 0;
+    padding: 10px;
+    box-sizing: border-box; /* Still crucial within flex items */
+}
+
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box; /* Important for full width */
+}
+
+.forgot-text {
+    display: block;
+    text-align: right;
+    font-size: 12px;
+    color: #999; /* Gray text like in the screen */
+    text-decoration: none;
+    margin-bottom: 10px;
+}
+
+/* Style for the main green Login button in the form */
+.login-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #008000; /* Dark Green matching */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.signup-text {
+    text-align: center;
+    font-size: 12px;
+    color: #666; /* Gray text */
+}
+
+.signup-link {
+    color: #008000; /* Green link matching */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+
+/* --- Footer Section (Bottom Gray Area) --- */
+/* Your HTML footer seems structured well. Let's make sure it appears at the bottom. The body flex: column handles this. The white box in the middle will push the footer down. */
+.footer {
+    background-color: #333; /* Dark gray for the whole footer area */
+    color: #ccc; /* Lighter gray text to be legible */
+    padding: 30px 15px;
+    font-size: 12px;
+    margin-top: auto; /* Pushes the footer down if there is space above it */
+    box-sizing: border-box; /* For mobile-friendly padding */
+    width: 100%; /* Ensure it spans full width */
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap; /* Allows columns to stack on small screens */
+    margin-bottom: 30px;
+}
+
+.footer-left, .footer-right {
+    width: 48%; /* Adjust for mobile stacked columns */
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-brand {
+    font-weight: bold;
+    font-size: 20px;
+    color: white; /* Betway text is white in the dark footer area */
+    margin-bottom: 15px;
+}
+
+.footer-left p, .footer-right p {
+    margin: 3px 0;
+    color: #ccc;
+    cursor: pointer; /* Footer links */
+}
+
+.footer-left p:first-child {
+    font-weight: bold;
+    margin-top: 10px; /* First link with weight */
+}
+
+
+.footer-text {
+    text-align: left;
+    color: #ccc;
+    font-size: 10px;
+    line-height: 1.4;
+    margin-top: 10px;
+}
+
+/* Responsive adjustements: Stacking footer columns on small screens */
+@media (max-width: 600px) {
+    .footer-left, .footer-right {
+        width: 100%;
+        text-align: left;
+    }
+    
+    .footer-left p:first-child {
+        margin-top: 0px;
+    }
+}
